@@ -42,3 +42,5 @@ net_data <- reshape2::melt(data = net_data, id = c("Subject_num","Activity"))
 net_data <- reshape2::dcast(data = net_data, Subject_num + Activity ~ variable, fun.aggregate = mean)
 
 tidy_data <- net_data
+
+write.table(tidy_data,"efs_final_results_table",row.name = FALSE)
